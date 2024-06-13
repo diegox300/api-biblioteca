@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
-import { LivroModule } from './usuario/livro.module';
-import { ProdutoModule } from './produtos/produto.module';
+import { LivroModule } from './livro/livro.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { PostgresConfigService } from './config/postgres.config.service';
 import { ConfigModule } from '@nestjs/config';
@@ -8,7 +7,6 @@ import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
     LivroModule, 
-    ProdutoModule,
     ConfigModule.forRoot({
       isGlobal: true
     }),
