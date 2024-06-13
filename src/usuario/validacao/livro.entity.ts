@@ -19,7 +19,7 @@ export class LivroEntity {
   @Column({ name: 'autor', length: 70, nullable: false }) // coluna
   autor: string;
 
-  @Column({ name: 'isbn', length: 255, nullable: false }) // coluna
+  @Column({ name: 'isbn', nullable: false }) // coluna
   isbn: number; // coluna
 
   @Column({ name: 'ano', nullable: false }) // coluna
