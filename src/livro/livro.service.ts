@@ -3,6 +3,7 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { ListaLivroDTO } from "./dto/ListaLivro.dto";
 import { LivroEntity } from "./validacao/livro.entity";
 import { Repository } from "typeorm";
+import { AtualizaLivroDTO } from "./dto/AtualizaLivro.dto";
 
 @Injectable()
 export class LivroService {
@@ -23,4 +24,12 @@ export class LivroService {
 
         return livrosLista;
     }
+
+    async atualizaLivros(id: string, livroEntity: AtualizaLivroDTO) {
+       await this.livroRepository.update(id,livroEntity);
+    }
+
+    async deleteLivros(id: string) {
+        this.livroRepository.delete(id);
+      }
 }

@@ -1,8 +1,8 @@
 {
-  "name": "loja",
+  "name": "Livraria",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Desafia pos.tech FIAP, Api em next com typeScript utilizando ORM.",
+  "author": "Diego Gervasio",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {

@@ -11,7 +11,7 @@ import {Entity,
 export class LivroEntity { 
 
   @PrimaryGeneratedColumn('uuid')
-  id: string; //campos
+  id: string; //campo
 
   @Column({ name: 'Titulo', length: 100, nullable: false }) // coluna
   titulo: string;

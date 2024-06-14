@@ -1,16 +1,14 @@
 import { Body, Controller, Post, Get, Put, Param, Delete } from '@nestjs/common';
-import { LivroRepository } from './livros.repository';
 import { CriaLivroDTO } from './dto/CriaLivro.dto';
 import { LivroEntity } from './validacao/livro.entity';
 import { v4 as uuid } from 'uuid';
 import { ListaLivroDTO } from './dto/ListaLivro.dto';
-import { AtualizaUsuarioDTO } from './dto/AtualizaUsuario.dto';
+import { AtualizaLivroDTO } from './dto/AtualizaLivro.dto';
 import { LivroService } from './livro.service';
 
 @Controller('/livros')
 export class LivroController {
   constructor(
-    private livroRepository: LivroRepository,
     private livroService: LivroService
   ) {}
 
@@ -33,4 +31,25 @@ export class LivroController {
    
     return livrosSalvos;
   }
+
+  @Put('/:id')
+  async atualizaLivro(@Param('id') id: string,@Body() novosDados: AtualizaLivroDTO){
+    const livroAtualizado = await this.livroService.atualizaLivros(id, novosDados);
+
+    return {
+      livro: livroAtualizado,
+      messagem: 'Livro Atualizado com Sucesso',
+    }
+  }
+
+  @Delete('/:id')
+  async removeLivro(@Param('id') id: string){
+    const livroRemovido = await this.livroService.deleteLivros(id);
+
+    return {
+      livro: livroRemovido,
+      messagem: 'Livro Removido com Sucesso',
+    }
+  }
+
 }
