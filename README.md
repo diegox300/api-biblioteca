@@ -45,3 +45,45 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
   Nest is [MIT licensed](LICENSE).
+
+## Example
+
+<b>@GET</b>
+
+ ![alt text](preview/Screenshot_1.jpg)
+
+<b>@POST</b>
+
+- PayLoad:
+
+```bash
+{
+"titulo" : "A menina que roubava livros",
+"autor" : "Markus Zusak",
+"isbn" : "123321",
+"ano" : "2015"
+}
+```
+
+![alt text](Screenshot_2.jpg)
+
+![alt text](Screenshot_3.jpg)
+
+<b>@PUT</b>
+- PayLoad:
+
+```bash
+{
+"titulo" : "A menina que roubava livros PUT",
+"autor" : "Markus Zusak",
+"isbn" : "123321",
+"ano" : "2014"
+}
+```
+![alt text](Screenshot_4.jpg)
+
+![alt text](Screenshot_5.jpg)
+
+<b>@DELETE</b>
+
+![alt text](Screenshot_6.jpg)
