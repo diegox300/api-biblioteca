@@ -40,14 +40,15 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## Stay in touch
 
 - Author - [Diego Gervasio](https://linktr.ee/diegogervasio)
-- Website - [https://nestjs.com](https://nestjs.com/)
+- Website - [senescenciaTech](https://nestjs.com/)
+- API - [Biblioteca for test](https://api-biblioteca-nu.vercel.app/livros/)
 
 ## License
 
   Nest is [MIT licensed](LICENSE).
 
 ## Example
-
+[Api] (https://api-biblioteca-nu.vercel.app/ )livros/ <br>
 <b>@GET</b>
 
  ![alt text](preview/Screenshot_1.jpg)
