@@ -25,6 +25,7 @@ export class LivroController {
       livro: new ListaLivroDTO(livroEntity.id, livroEntity.titulo), 
       message: 'Livro adicionado com sucesso.' };
     }
+    
   @Get()
   async listLivro() {
     const livrosSalvos = await this.livroService.listaLivros();
