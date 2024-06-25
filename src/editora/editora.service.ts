@@ -19,4 +19,8 @@ export class EditoraService {
 
         return editoraLista;
     }
+    async criarEditora(EditoraEntity: EditoraEntity) {
+        await this.editoraRepository.save(EditoraEntity);
+    }
+    
 }

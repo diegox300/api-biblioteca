@@ -1,13 +1,15 @@
+import { LivroEntity } from 'src/livro/validacao/livro.entity';
 import {Entity, 
         Column,
         CreateDateColumn,
         UpdateDateColumn,
         DeleteDateColumn,
-        PrimaryGeneratedColumn} 
+        PrimaryGeneratedColumn,
+        OneToMany} 
         from 'typeorm';
 
 
-@Entity({ name: 'Editora' }) // tabela
+@Entity({ name: 'editora' }) // tabela
 export class EditoraEntity { 
 
   @PrimaryGeneratedColumn('uuid')
@@ -15,6 +17,9 @@ export class EditoraEntity {
 
   @Column({ name: 'Editora', length: 100, nullable: false }) // coluna
   editora: string;
+
+  @OneToMany( type => LivroEntity, editora => EditoraEntity)
+  livros: LivroEntity[];
 
   @CreateDateColumn ({ name: 'created_at'}) // coluna
   createdAt: string;

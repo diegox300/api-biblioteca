@@ -1,9 +1,13 @@
+import { Type } from 'class-transformer';
+import { type } from 'os';
+import { EditoraEntity } from 'src/editora/validacao/editora.entity';
 import {Entity, 
         Column,
         CreateDateColumn,
         UpdateDateColumn,
         DeleteDateColumn,
-        PrimaryGeneratedColumn} 
+        PrimaryGeneratedColumn,
+        ManyToOne} 
         from 'typeorm';
 
 
@@ -24,6 +28,9 @@ export class LivroEntity {
 
   @Column({ name: 'ano', nullable: false }) // coluna
   ano: number; // coluna
+
+  @ManyToOne(type => EditoraEntity, livros => LivroEntity, {eager: true})
+  editora: EditoraEntity;
 
   @CreateDateColumn ({ name: 'created_at'}) // coluna
   createdAt: string;
