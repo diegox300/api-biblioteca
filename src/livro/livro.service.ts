@@ -19,7 +19,7 @@ export class LivroService {
     async listaLivros() {
         const livrosSalvos = await this.livroRepository.find();
         const livrosLista = livrosSalvos.map(
-        (livro) => new ListaLivroDTO(livro.id, livro.titulo)
+        (livro) => new ListaLivroDTO(livro.id, livro.titulo, livro.editora)
         )
 
         return livrosLista;

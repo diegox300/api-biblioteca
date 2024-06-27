@@ -5,6 +5,7 @@ import { v4 as uuid } from 'uuid';
 import { ListaLivroDTO } from './dto/ListaLivro.dto';
 import { AtualizaLivroDTO } from './dto/AtualizaLivro.dto';
 import { LivroService } from './livro.service';
+import { EditoraEntity } from 'src/editora/validacao/editora.entity';
 
 @Controller('/livros')
 export class LivroController {
@@ -20,9 +21,10 @@ export class LivroController {
     livroEntity.isbn = dadosDoLivro.isbn;
     livroEntity.ano = dadosDoLivro.ano;
     livroEntity.id = uuid();
+    livroEntity.editora = dadosDoLivro.editora;
     this.livroService.criarLivro(livroEntity);
     return { 
-      livro: new ListaLivroDTO(livroEntity.id, livroEntity.titulo), 
+      livro: new ListaLivroDTO(livroEntity.id, livroEntity.titulo, livroEntity.editora), 
       message: 'Livro adicionado com sucesso.' };
     }
     

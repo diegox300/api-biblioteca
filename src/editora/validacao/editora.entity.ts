@@ -5,7 +5,9 @@ import {Entity,
         UpdateDateColumn,
         DeleteDateColumn,
         PrimaryGeneratedColumn,
-        OneToMany} 
+        OneToMany,
+        JoinColumn,
+       } 
         from 'typeorm';
 
 
@@ -18,7 +20,7 @@ export class EditoraEntity {
   @Column({ name: 'Editora', length: 100, nullable: false }) // coluna
   editora: string;
 
-  @OneToMany( type => LivroEntity, editora => EditoraEntity)
+  @OneToMany(() => LivroEntity, (livros) => livros.titulo)
   livros: LivroEntity[];
 
   @CreateDateColumn ({ name: 'created_at'}) // coluna

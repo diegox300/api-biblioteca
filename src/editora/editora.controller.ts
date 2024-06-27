@@ -14,7 +14,6 @@ export class EditoraController {
   @Get()
   async listEditora() {
     const editoraSalvos = await this.editoraService.listaEditora();
-   
     return editoraSalvos;
   }
 
@@ -25,7 +24,7 @@ export class EditoraController {
     editoraEntity.id = uuid();
     this.editoraService.criarEditora(editoraEntity);
     return { 
-      livro: new ListaEditoraDTO(editoraEntity.id, editoraEntity.editora), 
+      livro: new ListaEditoraDTO(editoraEntity.id, editoraEntity.editora, editoraEntity.livros), 
       message: 'Editora adicionado com sucesso.' };
     }
 

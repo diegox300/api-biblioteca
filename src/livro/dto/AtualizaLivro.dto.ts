@@ -3,6 +3,7 @@ import {
   IsOptional,
   MinLength,
 } from 'class-validator';
+import { EditoraEntity } from 'src/editora/validacao/editora.entity';
 
 export class AtualizaLivroDTO {
   @IsNotEmpty({ message: 'O titulo não pode ser vazio' })
@@ -18,5 +19,8 @@ export class AtualizaLivroDTO {
   
   @IsOptional()
   ano: number;
+
+  @IsOptional()
+  editora: EditoraEntity;
 
 }

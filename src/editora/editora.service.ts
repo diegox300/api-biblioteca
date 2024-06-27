@@ -14,7 +14,7 @@ export class EditoraService {
     async listaEditora() {
         const editoraSalvos = await this.editoraRepository.find();
         const editoraLista = editoraSalvos.map(
-        (editora) => new ListaEditoraDTO(editora.id, editora.editora)
+        (editora) => new ListaEditoraDTO(editora.id, editora.editora, editora.livros)
         )
 
         return editoraLista;
