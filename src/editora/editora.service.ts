@@ -3,6 +3,7 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { EditoraEntity } from "./validacao/editora.entity";
 import { ListaEditoraDTO } from "./dto/ListaEditora.dto";
+import { AtualizaEditoraDTO } from "./dto/AtualizaEditora.dto";
 
 @Injectable()
 export class EditoraService {
@@ -14,7 +15,7 @@ export class EditoraService {
     async listaEditora() {
         const editoraSalvos = await this.editoraRepository.find();
         const editoraLista = editoraSalvos.map(
-        (editora) => new ListaEditoraDTO(editora.id, editora.editora, editora.livros)
+        (editora) => new ListaEditoraDTO(editora.id, editora.editora)
         )
 
         return editoraLista;
@@ -22,5 +23,13 @@ export class EditoraService {
     async criarEditora(EditoraEntity: EditoraEntity) {
         await this.editoraRepository.save(EditoraEntity);
     }
+
+    async atualizaEditora(id: string, editoraEntity: AtualizaEditoraDTO) {
+        await this.editoraRepository.update(id,editoraEntity);
+     }
+
+     async deleteEditora(id: string) {
+        this.editoraRepository.delete(id);
+      }
     
 }

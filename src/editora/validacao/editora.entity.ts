@@ -6,7 +6,6 @@ import {Entity,
         DeleteDateColumn,
         PrimaryGeneratedColumn,
         OneToMany,
-        JoinColumn,
        } 
         from 'typeorm';
 
@@ -21,7 +20,7 @@ export class EditoraEntity {
   editora: string;
 
   @OneToMany(() => LivroEntity, (livros) => livros.titulo)
-  livros: LivroEntity[];
+  livros: LivroEntity[]
 
   @CreateDateColumn ({ name: 'created_at'}) // coluna
   createdAt: string;

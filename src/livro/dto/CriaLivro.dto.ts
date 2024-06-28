@@ -2,8 +2,7 @@ import {
   IsNotEmpty,
 } from 'class-validator';
 import { EditoraEntity } from 'src/editora/validacao/editora.entity';
-import { LivroEntity } from '../validacao/livro.entity';
-import { ManyToOne } from 'typeorm';
+
 
 export class CriaLivroDTO {
   @IsNotEmpty({ message: 'O titulo não pode ser vazio' })
@@ -20,4 +19,5 @@ export class CriaLivroDTO {
 
   @IsNotEmpty ({ message: 'Editora não pode ser vazio'})
   editora: EditoraEntity;
+
 }

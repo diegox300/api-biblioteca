@@ -1,9 +1,10 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { EditoraService } from './editora.service';
 import { CriaEditoraDTO } from './dto/CriaEditora.dto';
 import { EditoraEntity } from './validacao/editora.entity';
 import { ListaEditoraDTO } from './dto/ListaEditora.dto';
 import { v4 as uuid } from 'uuid';
+import { AtualizaEditoraDTO } from './dto/AtualizaEditora.dto';
 
 @Controller('/editora')
 export class EditoraController {
@@ -24,8 +25,30 @@ export class EditoraController {
     editoraEntity.id = uuid();
     this.editoraService.criarEditora(editoraEntity);
     return { 
-      livro: new ListaEditoraDTO(editoraEntity.id, editoraEntity.editora, editoraEntity.livros), 
+      livro: new ListaEditoraDTO(editoraEntity.id, editoraEntity.editora), 
       message: 'Editora adicionado com sucesso.' };
     }
+
+  @Put('/:id')
+  async atualizaEditora(@Param('id') id: string,@Body() novosDados: AtualizaEditoraDTO){
+    console.log(novosDados)
+    const editoraAtualizado = await this.editoraService.atualizaEditora(id, novosDados);
+   
+    return {
+      editoraAtualizado,
+      novosDados,
+      messagem: 'Editora Atualizado com Sucesso',
+    }
+  }
+
+  @Delete('/:id')
+  async removeEditora(@Param('id') id: string){
+    const editoraRemovido = await this.editoraService.deleteEditora(id);
+
+    return {
+      livro: editoraRemovido,
+      messagem: 'Editora Removida com Sucesso',
+    }
+  }
 
 }
