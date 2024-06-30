@@ -5,6 +5,7 @@ import { v4 as uuid } from 'uuid';
 import { ListaLivroDTO } from './dto/ListaLivro.dto';
 import { AtualizaLivroDTO } from './dto/AtualizaLivro.dto';
 import { LivroService } from './livro.service';
+import { existsSync } from 'fs';
 
 @Controller('/livros')
 export class LivroController {
@@ -56,7 +57,8 @@ export class LivroController {
 
   @Get('/:id')
   async getLivroId(@Param('id') id: string) {
-  return this.livroService.getLivroId(id);
+    const verificar = await this.livroService.getLivroId(id);
+    return verificar
  
   }
 

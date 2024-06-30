@@ -9,33 +9,33 @@ import {Entity,
         from 'typeorm';
 
 
-@Entity({ name: 'livros' }) // tabela
-export class LivroEntity { 
+@Entity({ name: 'livros' })
+export class LivroEntity {
 
   @PrimaryGeneratedColumn('uuid')
-  id: string; //campo
+  id: string;
 
-  @Column({ name: 'Titulo', length: 100, nullable: false }) // coluna
+  @Column({ name: 'Titulo', length: 100, nullable: false }) 
   titulo: string;
   
-  @Column({ name: 'autor', length: 70, nullable: false }) // coluna
+  @Column({ name: 'autor', length: 70, nullable: false }) 
   autor: string;
 
-  @Column({ name: 'isbn', nullable: false }) // coluna
-  isbn: number; // coluna
+  @Column({ name: 'isbn', nullable: false }) 
+  isbn: number; 
 
-  @Column({ name: 'ano', nullable: false }) // coluna
-  ano: number; // coluna
+  @Column({ name: 'ano', nullable: false }) 
+  ano: number; 
 
-  @ManyToOne(() => EditoraEntity, (editora) => editora.editora, {eager: true})
+  @ManyToOne(() => EditoraEntity, (editora) => editora.editora, {eager: true, cascade:true})
   editora: EditoraEntity;
 
-  @CreateDateColumn ({ name: 'created_at'}) // coluna
+  @CreateDateColumn ({ name: 'created_at'})
   createdAt: string;
 
-  @UpdateDateColumn ({ name: 'updated_at'}) // coluna
+  @UpdateDateColumn ({ name: 'updated_at'})
   updatedAt: string;
   
-  @DeleteDateColumn ({ name: 'deleted_at'}) // coluna
+  @DeleteDateColumn ({ name: 'deleted_at'})
   deletedAt: string;
 }

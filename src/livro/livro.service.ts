@@ -34,7 +34,7 @@ export class LivroService {
       }
 
       async getLivroId(id: string) {
-      return this.livroRepository.findOneBy({id: id});
-        }
+      return await this.livroRepository.findOneBy({id: id})
+      }
         
 }
