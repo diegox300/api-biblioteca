@@ -108,11 +108,11 @@ to update publisher pass existing ID.
 }
 }
 ```
-![alt text](Screenshot_9.jpg)
+![alt text](preview/Screenshot_9.jpg)
 
 <b>@DELETE</b> - https://api-biblioteca-nu.vercel.app/livros/id
 
-![alt text](Screenshot_3.jpg)
+![alt text](preview/Screenshot_3.jpg)
 
 #### Publish<br>
 
