@@ -40,22 +40,29 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## Stay in touch
 
 - Author - [Diego Gervasio](https://linktr.ee/diegogervasio)
-- Website - [senescenciaTech](https://nestjs.com/)
+- Website - [senescenciaTech](https://senescencia.tech/)
 - API - [Biblioteca for test](https://api-biblioteca-nu.vercel.app/livros/)
 
 ## License
 
   Nest is [MIT licensed](LICENSE).
 
-## Example
-[Api] (https://api-biblioteca-nu.vercel.app/ )livros/ <br>
-<b>@GET</b>
+## Example<br>
+#### Books<br>
+[Api](https://api-biblioteca-nu.vercel.app/livros/) <br><br>
+<b>@GET</b> https://api-biblioteca-nu.vercel.app/livros/
+![alt text](preview/Screenshot_1.jpg)
 
- ![alt text](preview/Screenshot_1.jpg)
+or
+
+<b>@GET</b> https://api-biblioteca-nu.vercel.app/livros/id
+
+for books specific. 
+ ![alt text](preview/Screenshot_8.jpg)
 
 <b>@POST</b>
 
-- PayLoad:
+- PayLoad new publishing:
 
 ```bash
 {
@@ -63,28 +70,88 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 "autor" : "Markus Zusak",
 "isbn" : "123321",
 "ano" : "2015"
+"editora" : {
+    "editora" : "Nova editora"
+            }
 }
 ```
+![alt text](preview/Screenshot_7.jpg)
 
-![alt text](Screenshot_2.jpg)
-
-![alt text](Screenshot_3.jpg)
-
-<b>@PUT</b>
-- PayLoad:
+- PayLoad publisher ID that exists:
 
 ```bash
 {
-"titulo" : "A menina que roubava livros PUT",
+"titulo" : "A menina que roubava livros",
 "autor" : "Markus Zusak",
 "isbn" : "123321",
-"ano" : "2014"
+"ano" : "2015"
+"editora" : {
+    "id" : "c04ced5f-7ac7-4beb-9297-40d9e1fd4a45"
+            }
 }
 ```
-![alt text](Screenshot_4.jpg)
+![alt text](preview/Screenshot_2.jpg)
 
-![alt text](Screenshot_5.jpg)
+<b>@PUT</b>- https://api-biblioteca-nu.vercel.app/livros/id
 
-<b>@DELETE</b>
+- PayLoad:
+to update publisher pass existing ID.
 
-![alt text](Screenshot_6.jpg)
+```bash
+{
+"titulo" : "A menina que roubava livros 2 put",
+"autor" : "Markus Zusak",
+"isbn" : "123321",
+"ano" : "2015",
+"editora" : {
+    "id" : "32a29790-5c39-4b7b-864a-fe0cd5196bdf"
+}
+}
+```
+![alt text](Screenshot_9.jpg)
+
+<b>@DELETE</b> - https://api-biblioteca-nu.vercel.app/livros/id
+
+![alt text](Screenshot_3.jpg)
+
+#### Publish<br>
+
+[Api](https://api-biblioteca-nu.vercel.app/editora/) <br><br>
+<b>@GET</b> https://api-biblioteca-nu.vercel.app/editora/
+
+![alt text](preview/Screenshot_10.jpg)
+
+or
+
+<b>@GET</b> https://api-biblioteca-nu.vercel.app/editora/id
+
+for publish specific. 
+ ![alt text](preview/Screenshot_11.jpg)<br><br>
+<b>@POST</b>
+
+- PayLoad new publishing:
+
+```bash
+{
+
+    "editora" : "Nova editora"
+        
+}
+```
+![alt text](preview/Screenshot_12.jpg)<br> <br>
+
+<b>@PUT</b>- https://api-biblioteca-nu.vercel.app/editora/id
+
+- PayLoad:
+```bash
+{
+"editora" : "Nova editora PUT"
+}
+```
+![alt text](preview/Screenshot_13.jpg)
+
+<b>@DELETE</b> - https://api-biblioteca-nu.vercel.app/editora/id 
+<br> <br>
+<b>Warning:</b> To exclude a publisher, it cannot be linked to a book.
+
+![alt text](preview/Screenshot_14.jpg)

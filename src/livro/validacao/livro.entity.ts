@@ -27,7 +27,7 @@ export class LivroEntity {
   @Column({ name: 'ano', nullable: false }) // coluna
   ano: number; // coluna
 
-  @ManyToOne(() => EditoraEntity, (editora) => editora.editora, {eager: true})
+  @ManyToOne(() => EditoraEntity, (editora) => editora.editora, {eager: true, cascade: true} )
   editora: EditoraEntity;
 
   @CreateDateColumn ({ name: 'created_at'}) // coluna

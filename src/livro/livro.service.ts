@@ -13,7 +13,7 @@ export class LivroService {
     ) {}
 
     async criarLivro(LivroEntity: LivroEntity) {
-       return await this.livroRepository.save(LivroEntity);
+    return await this.livroRepository.save(LivroEntity);
     }
 
     async listaLivros() {
@@ -25,16 +25,16 @@ export class LivroService {
         return livrosLista;
     }
 
-    async atualizaLivros(id: string, livroEntity: AtualizaLivroDTO) {
+    async atualizaLivros(id: string, livroEntity: AtualizaLivroDTO) {        
        return await this.livroRepository.update(id,livroEntity);
     }
 
     async deleteLivros(id: string) {
-       return this.livroRepository.delete(id);
+       return await this.livroRepository.delete(id);
       }
 
       async getLivroId(id: string) {
       return this.livroRepository.findOneBy({id: id});
-        }
+    }
         
 }

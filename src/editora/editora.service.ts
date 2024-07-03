@@ -29,7 +29,10 @@ export class EditoraService {
      }
 
      async deleteEditora(id: string) {
-        this.editoraRepository.delete(id);
+       await this.editoraRepository.delete(id);
       }
-    
+
+      async getEditoraId(id: string) {
+        return await this.editoraRepository.findOneBy({id: id});
+      }
 }

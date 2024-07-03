@@ -36,20 +36,17 @@ export class LivroController {
 
   @Put('/:id')
   async atualizaLivro(@Param('id') id: string,@Body() novosDados: AtualizaLivroDTO){
-    const livroAtualizado = await this.livroService.atualizaLivros(id, novosDados);
-
-    return {
-      livro: livroAtualizado,
-      messagem: 'Livro Atualizado com Sucesso',
+  await this.livroService.atualizaLivros(id, novosDados);
+  return {
+      messagem: 'Livro Atualizado.',
     }
   }
 
   @Delete('/:id')
   async removeLivro(@Param('id') id: string){
-    const livroRemovido = await this.livroService.deleteLivros(id);
+  await this.livroService.deleteLivros(id);
 
     return {
-      livro: livroRemovido,
       messagem: 'Livro Removido com Sucesso',
     }
   }
@@ -57,7 +54,6 @@ export class LivroController {
   @Get('/:id')
   async getLivroId(@Param('id') id: string) {
   return this.livroService.getLivroId(id);
- 
   }
 
 }

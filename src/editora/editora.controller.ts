@@ -51,4 +51,9 @@ export class EditoraController {
     }
   }
 
+  @Get('/:id')
+  async getEditoraId(@Param('id') id: string) {
+ return await this.editoraService.getEditoraId(id);
+}
+
 }

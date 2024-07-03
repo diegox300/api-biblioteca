@@ -16,7 +16,7 @@ export class EditoraEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string; //campo
 
-  @Column({ name: 'Editora', length: 100, nullable: false }) // coluna
+  @Column({ name: 'Editora', length: 100, nullable: false}) // coluna
   editora: string;
 
   @OneToMany(() => LivroEntity, (livros) => livros.titulo)
