@@ -2,7 +2,7 @@
 | -------------  | --- |
 | :sparkles: Nome        | **API Biblioteca**
 | :label: Tecnologias | NestJS,TypeORM,PostgreSQL (tecnologias utilizadas)
-| :rocket: URL         | https://url-deploy.com.br](https://api-biblioteca-nu.vercel.app/livros/)
+| :rocket: URL         | [https://url-deploy.com.br](https://api-biblioteca-nu.vercel.app/livros/)
 
 # api-biblioteca 
 CRUD REST - Full API with NestJs.
