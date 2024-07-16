@@ -1,8 +1,14 @@
+| :placard: Vitrine.Dev |     |
+| -------------  | --- |
+| :sparkles: Nome        | **API Biblioteca**
+| :label: Tecnologias | NestJS,TypeORM,PostgreSQL (tecnologias utilizadas)
+| :rocket: URL         | https://url-deploy.com.br](https://api-biblioteca-nu.vercel.app/livros/)
+
 # api-biblioteca 
-CRUD REST - full API with NestJs.
+CRUD REST - Full API with NestJs.
 
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg#vitrinedev" width="320" alt="Nest Logo" /></a>
 </p>
 <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
 
